@@ -28,7 +28,7 @@ void	BitcoinExchange::loadData()
 		this->_data[key] = atof(value.c_str());
 }
 
-std::string getValue(std::string &str)
+std::string	BitcoinExchange::getValue(std::string &str)
 {
 	size_t	start = str.find('|');
 	size_t	end = str.length() - 1;
@@ -43,7 +43,7 @@ std::string getValue(std::string &str)
 	return (str.substr(start, end - start + 1));
 }
 
-std::string getDate(std::string &str)
+std::string BitcoinExchange::getDate(std::string &str)
 {
 	size_t	start = 0;
 	size_t	end = str.find('|');
