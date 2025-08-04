@@ -82,9 +82,19 @@ void	BitcoinExchange::getResult(const std::string fileName)
 				std::cout << "Error: invalid value" << std::endl;
 			else
 			{
-				std::cout	<< date << " => "
-							<< value << " = "
-							<< this->_data[date] * atof(value.c_str()) << std::endl;
+				std::map<std::string, float>::iterator it = this->_data.lower_bound(date);
+				if (it == this->_data.begin() && it->first != date)
+				{
+					std::cout << "Error: invalid date" << std::endl;
+					continue;
+				}
+				else if (it->first != date)
+				{
+					it--;
+				}
+				std::cout << it->first << " => "
+						  << value << " = "
+						  << this->_data[it->first] * atof(value.c_str()) << std::endl;
 			}
 		}
 		else
