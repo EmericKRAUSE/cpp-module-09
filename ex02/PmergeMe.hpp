@@ -11,5 +11,7 @@ class PmergeMe
 		~PmergeMe();
 		//	####################
 		//	Methodes
-		void sortByPairs(std::vector<int> &arguments);
+		std::vector<int>	sortByPairs(std::vector<int> &arguments);
+		void				displaySortedList() const;
+		void				setMain(std::vector<int> toSet);
 };

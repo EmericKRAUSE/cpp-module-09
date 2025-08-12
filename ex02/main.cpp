@@ -1,4 +1,5 @@
 #include "../colors.hpp"
+#include "PmergeMe.hpp"
 
 #include <iostream>
 #include <string>
@@ -44,10 +45,13 @@ std::vector<int>	fillContainer(char **argv)
 int main(int argc, char **argv)
 {
 	std::vector<int> arguments;
+	PmergeMe merge;
+
 	if (argc < 2)
 		return (ft_error("No arguments"), 1);
 	if (!isAllInt(argv))
 		return (ft_error("All arguments must be integers"), 1);
 	arguments = fillContainer(argv);
-	
+	merge.setMain(merge.sortByPairs(arguments));
+	merge.displaySortedList();
 }
