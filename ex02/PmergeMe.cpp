@@ -71,13 +71,15 @@ std::vector<int> PmergeMe::sortByPairs(std::vector<int> &arguments)
 		int	end = jSeq[i];
 		while (start <= end)
 		{
-			//std::cout << "start: " << start << "end: " << end << std::endl;
 			itInsert = std::lower_bound(main.begin(), main.end(), pend[start]);
-			//std::cout << "insert[" << i << "]: " << pend[start] << std::endl;
 			main.insert(itInsert, pend[start]);
 			start++;
-			//std::cout << "\n";
 		}
+	}
+	for (std::vector<int>::iterator it = pend.begin() + jSeq.back() + 1; it < pend.end(); it++)
+	{
+		itInsert = std::lower_bound(main.begin(), main.end(), *it);
+		main.insert(itInsert, *it);
 	}
 	return (main);
 }
