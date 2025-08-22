@@ -11,7 +11,9 @@ class BitcoinExchange
 		std::string getValue(std::string &str);
 	public:
 		BitcoinExchange();
+		BitcoinExchange(const BitcoinExchange &obj);
 		~BitcoinExchange();
+		BitcoinExchange &operator=(const BitcoinExchange &obj);
 
 		//	####################
 		//	Methodes

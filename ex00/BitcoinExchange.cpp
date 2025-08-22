@@ -8,8 +8,21 @@
 BitcoinExchange::BitcoinExchange()
 {}
 
+BitcoinExchange::BitcoinExchange(const BitcoinExchange &obj)
+	: _data(obj._data)
+{}
+
 BitcoinExchange::~BitcoinExchange()
 {}
+
+BitcoinExchange& BitcoinExchange::operator=(const BitcoinExchange &obj)
+{
+	if (this != &obj)
+	{
+		_data = obj._data;
+	}
+	return (*this);
+}
 
 //	####################
 //	Methodes

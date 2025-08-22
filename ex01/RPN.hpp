@@ -12,7 +12,9 @@ class RPN
 
 	public:
 		RPN();
+		RPN(const RPN &obj);
 		~RPN();
+		RPN &operator=(const RPN &obj);
 
 		//	####################
 		//	Methodes

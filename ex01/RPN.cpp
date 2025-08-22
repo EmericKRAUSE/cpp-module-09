@@ -8,9 +8,24 @@ RPN::RPN()
 
 }
 
+RPN::RPN(const RPN &obj)
+	: _stack(obj._stack)
+{
+
+}
+
 RPN::~RPN()
 {
 
+}
+
+RPN &RPN::operator=(const RPN &obj)
+{
+	if (this != &obj)
+	{
+		this->_stack = obj._stack;
+	}
+	return (*this);
 }
 
 bool RPN::isOperator(char c)
