@@ -49,9 +49,9 @@ std::string	BitcoinExchange::getValue(std::string &str)
 		return ("");
 	start++;
 
-	while (start < end && str[start] == ' ')
+	while (start < end && (str[start] == ' ' || str[start] == '\t'))
 		start++;
-	while (end > start && str[end] == ' ')
+	while (end > start && (str[end] == ' ' || str[end] == '\t'))
 		end--;
 	return (str.substr(start, end - start + 1));
 }
@@ -64,9 +64,9 @@ std::string BitcoinExchange::getDate(std::string &str)
 		return ("");
 	end--;
 
-	while (start < end && str[start] == ' ')
+	while (start < end && (str[start] == ' ' || str[start] == '\t'))
 		start++;
-	while (end > start && str[end] == ' ')
+	while (end > start && (str[end] == ' ' || str[end] == '\t'))
 		end--;
 	return (str.substr(start, end - start + 1));
 }
