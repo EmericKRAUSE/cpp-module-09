@@ -16,9 +16,9 @@ int main(int argc, char **argv)
 	if (argc != 2)
 		return(ft_error("need one argument"), 1);
 	(void)argv;
-	exchange.loadData();
 	try
 	{
+		exchange.loadData();
 		exchange.getResult(argv[1]);
 	}
 	catch(const std::exception& e)
