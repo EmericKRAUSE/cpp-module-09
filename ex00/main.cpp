@@ -15,7 +15,6 @@ int main(int argc, char **argv)
 	BitcoinExchange exchange;
 	if (argc != 2)
 		return(ft_error("need one argument"), 1);
-	(void)argv;
 	try
 	{
 		exchange.loadData();
